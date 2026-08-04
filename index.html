@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>F-HDAC — Tour de France en avion</title>
+<meta name="description" content="Suivi du tour de France en Diamond DA20, immatriculation F-HDAC : étapes, carnet de bord et photos." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>✈️</text></svg>" />
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --surface: #ffffff;
+    --fg: #17181c;
+    --muted: #62666e;
+    --border: #e6e4de;
+    --accent: #ff6b35;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0d10;
+      --surface: #15171b;
+      --fg: #f2f2f0;
+      --muted: #9a9da4;
+      --border: #26282e;
+      --accent: #ff7a47;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header.hero {
+    padding: 72px 0 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  .cta:hover { transform: translateY(-1px); }
+  .plane {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+
+  section.stages { padding: 48px 0 80px; }
+  h2 {
+    font-size: 22px;
+    margin: 0 0 28px;
+  }
+  .stage {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .stage-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 14px;
+    margin-bottom: 14px;
+  }
+  .stage-number {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .stage-date {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .stage-route {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  .stage-log {
+    margin: 0 0 18px;
+    padding-left: 16px;
+    border-left: 3px solid var(--border);
+    color: var(--fg);
+    font-size: 15px;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .gallery.empty {
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 0 48px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="plane">✈️</div>
+      <p class="eyebrow">Tour de France en avion</p>
+      <h1>F-HDAC</h1>
+      <p class="lead">Diamond DA20-C1 Katana — suivez le tour de France en avion, étape par étape.</p>
+      <a class="cta" href="https://www.flightradar24.com/data/aircraft/f-hdac" target="_blank" rel="noopener">
+        Suivre en direct sur FlightRadar24 ↗
+      </a>
+    </div>
+  </header>
+
+  <section class="stages">
+    <div class="wrap">
+      <h2>Les étapes</h2>
+
+      <article class="stage">
+        <div class="stage-meta">
+          <span class="stage-number">Étape 1</span>
+          <span class="stage-date">Mardi 4 août 2026</span>
+        </div>
+        <p class="stage-route">Toulouse → Oléron</p>
+        <p class="stage-log">
+          Bien arrivé à Oléron. Suis passé derrière une patrouille d'Air Tractor, ai assisté à deux
+          feux, avion parfait, turbulent, pas d'entrée maritime. Over.
+        </p>
+        <div class="gallery empty">Photos à venir</div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    Tour de France en avion · F-HDAC
+  </footer>
+</body>
+</html>
