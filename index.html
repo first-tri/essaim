@@ -8,21 +8,23 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>✈️</text></svg>" />
 <style>
   :root {
-    --bg: #f7f6f3;
+    --bg: #f7f5f1;
     --surface: #ffffff;
-    --fg: #17181c;
-    --muted: #62666e;
-    --border: #e6e4de;
-    --accent: #ff6b35;
+    --fg: #201d17;
+    --muted: #6b6459;
+    --border: #e7e2d8;
+    --accent: #a5793a;
+    --accent-2: #3d5a73;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0c0d10;
-      --surface: #15171b;
-      --fg: #f2f2f0;
-      --muted: #9a9da4;
-      --border: #26282e;
-      --accent: #ff7a47;
+      --bg: #0d0e10;
+      --surface: #17181b;
+      --fg: #f1efe9;
+      --muted: #a19a8c;
+      --border: #2a2b2e;
+      --accent: #c99a54;
+      --accent-2: #7fa2c0;
     }
   }
   * { box-sizing: border-box; }
@@ -34,55 +36,67 @@
     line-height: 1.5;
   }
   .wrap {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 0 20px;
   }
+
   header.hero {
-    padding: 72px 0 48px;
+    position: relative;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+    background: #1a1c1f url("images/etape-1-03.jpg") center 65% / cover no-repeat;
+  }
+  header.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 8, 0.15) 0%, rgba(10, 9, 7, 0.55) 65%, rgba(8, 7, 6, 0.88) 100%);
+  }
+  .hero-content {
+    position: relative;
+    width: 100%;
+    padding: 48px 0 40px;
     text-align: center;
-    border-bottom: 1px solid var(--border);
+    color: #fdfcfa;
   }
   .eyebrow {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: #e3c48a;
     margin: 0 0 12px;
   }
   h1 {
-    font-size: clamp(28px, 5vw, 42px);
-    margin: 0 0 14px;
+    font-size: clamp(30px, 6vw, 46px);
+    margin: 0 0 12px;
     letter-spacing: -0.01em;
+    font-weight: 700;
   }
   .lead {
-    color: var(--muted);
+    color: #e7e4dd;
     font-size: 16px;
-    max-width: 480px;
-    margin: 0 auto 32px;
+    max-width: 460px;
+    margin: 0 auto 28px;
   }
   .cta {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: var(--accent);
-    color: #fff;
+    color: #1a1408;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
-    padding: 13px 24px;
+    padding: 13px 26px;
     border-radius: 999px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+    transition: transform 0.15s ease;
   }
   .cta:hover { transform: translateY(-1px); }
-  .plane {
-    font-size: 34px;
-    margin-bottom: 8px;
-  }
 
-  section.stages { padding: 48px 0 80px; }
+  section.stages { padding: 56px 0 80px; }
   h2 {
     font-size: 22px;
     margin: 0 0 28px;
@@ -91,7 +105,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 24px 26px;
+    padding: 26px 28px;
     margin-bottom: 24px;
   }
   .stage-meta {
@@ -116,26 +130,34 @@
     font-size: 19px;
     font-weight: 600;
     margin: 0 0 14px;
+    color: var(--accent-2);
   }
   .stage-log {
-    margin: 0 0 18px;
+    margin: 0 0 20px;
     padding-left: 16px;
-    border-left: 3px solid var(--border);
+    border-left: 3px solid var(--accent);
     color: var(--fg);
     font-size: 15px;
   }
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
   }
+  .gallery a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
   .gallery img {
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid var(--border);
+    transition: transform 0.2s ease;
   }
+  .gallery a:hover img { transform: scale(1.04); }
   .gallery.empty {
     border: 1px dashed var(--border);
     border-radius: 10px;
@@ -155,8 +177,7 @@
 </head>
 <body>
   <header class="hero">
-    <div class="wrap">
-      <div class="plane">✈️</div>
+    <div class="hero-content wrap">
       <p class="eyebrow">Tour de France en avion</p>
       <h1>F-HDAC</h1>
       <p class="lead">Diamond DA20-C1 Katana — suivez le tour de France en avion, étape par étape.</p>
@@ -180,7 +201,13 @@
           Bien arrivé à Oléron. Suis passé derrière une patrouille d'Air Tractor, ai assisté à deux
           feux, avion parfait, turbulent, pas d'entrée maritime. Over.
         </p>
-        <div class="gallery empty">Photos à venir</div>
+        <div class="gallery">
+          <a href="images/etape-1-01.jpg" target="_blank"><img src="images/etape-1-01.jpg" alt="F-HDAC au sol au coucher du soleil, tente de bivouac au premier plan" loading="lazy" /></a>
+          <a href="images/etape-1-02.jpg" target="_blank"><img src="images/etape-1-02.jpg" alt="Empennage de F-HDAC avec l'immatriculation et le logo ACAT" loading="lazy" /></a>
+          <a href="images/etape-1-03.jpg" target="_blank"><img src="images/etape-1-03.jpg" alt="Aile de F-HDAC au coucher du soleil sur le tarmac" loading="lazy" /></a>
+          <a href="images/etape-1-04.jpg" target="_blank"><img src="images/etape-1-04.jpg" alt="Nez de F-HDAC de nuit, feu de position rouge allumé" loading="lazy" /></a>
+          <a href="images/etape-1-05.jpg" target="_blank"><img src="images/etape-1-05.jpg" alt="Carnet de vol éclairé en rouge de nuit" loading="lazy" /></a>
+        </div>
       </article>
 
     </div>
