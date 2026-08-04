@@ -250,6 +250,45 @@
     width: 100%;
   }
 
+  /* ---- Flight data panels ---- */
+  .data-heading {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 28px 0 12px;
+    clear: both;
+  }
+  .flight-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .panel {
+    flex: 1 1 260px;
+    margin: 0;
+    background: #1c1d1f;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px -6px rgba(20, 14, 4, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  .panel img {
+    display: block;
+    width: 100%;
+  }
+  .panel figcaption {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #cabb9a;
+    padding: 8px 12px;
+    background: #16171a;
+  }
+
   footer {
     text-align: center;
     padding: 32px 0 48px;
@@ -302,6 +341,18 @@
           <a class="polaroid" href="images/etape-1-03.jpg" target="_blank"><img src="images/etape-1-03.jpg" alt="Aile de F-HDAC au coucher du soleil sur le tarmac" loading="lazy" /></a>
           <a class="polaroid" href="images/etape-1-04.jpg" target="_blank"><img src="images/etape-1-04.jpg" alt="Nez de F-HDAC de nuit, feu de position rouge allumé" loading="lazy" /></a>
           <a class="polaroid" href="images/etape-1-05.jpg" target="_blank"><img src="images/etape-1-05.jpg" alt="Carnet de vol éclairé en rouge de nuit" loading="lazy" /></a>
+        </div>
+
+        <p class="data-heading">Trajectoire &amp; données de vol</p>
+        <div class="flight-data">
+          <figure class="panel">
+            <img src="images/etape-1-map.jpg" alt="Trajectoire du vol Toulouse–Oléron enregistrée sur FlightRadar24" loading="lazy" />
+            <figcaption>Trajectoire · FlightRadar24</figcaption>
+          </figure>
+          <figure class="panel">
+            <img src="images/etape-1-graph.jpg" alt="Graphe de vitesse et d'altitude du vol, FlightRadar24" loading="lazy" />
+            <figcaption>Vitesse &amp; altitude · FlightRadar24</figcaption>
+          </figure>
         </div>
       </article>
 
